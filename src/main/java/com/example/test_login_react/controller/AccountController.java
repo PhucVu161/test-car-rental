@@ -1,6 +1,7 @@
 package com.example.test_login_react.controller;
 
 import com.example.test_login_react.entity.Account;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.test_login_react.service.AccountService;
@@ -22,23 +23,35 @@ public class AccountController {
     }
 
     @PostMapping("/login")
-    public Map<String, Object> login(@RequestBody Map<String, String> loginRequest) {
+    public Map<String, Object> login(@RequestBody Map<String, String> loginRequest, HttpSession session) {
         String username = loginRequest.get("username");
         String password = loginRequest.get("password");
 
-        Map<String, Object> response = new HashMap<>();
-        List<Account> accounts = accountService.getAccounts(); // Lấy danh sách account từ service
-
+        List<Account> accounts = accountService.getAccounts();
         Optional<Account> user = accounts.stream()
                 .filter(acc -> acc.getUsername().equals(username) && acc.getPassword().equals(password))
                 .findFirst();
 
         if (user.isPresent()) {
-            response.put("success", true);
-            response.put("role", user.get().getRole());
+            session.setAttribute("user", user.get()); // Lưu vào Session
+            return Map.of("success", true, "role", user.get().getRole());
         } else {
-            response.put("success", false);
+            return Map.of("success", false);
         }
-        return response;
+    }
+
+    @GetMapping("/logout")
+    public Map<String, String> logout(HttpSession session) {
+        session.invalidate(); // Xóa Session khi đăng xuất
+        return Map.of("message", "Đăng xuất thành công!");
+    }
+
+    @GetMapping("/me")
+    public Map<String, Object> getUserSession(HttpSession session) {
+        Account user = (Account) session.getAttribute("user");
+        if (user == null) {
+            return Map.of("loggedIn", false);
+        }
+        return Map.of("loggedIn", true, "username", user.getUsername(), "role", user.getRole());
     }
 }
