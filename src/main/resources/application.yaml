@@ -1,0 +1,17 @@
+server:
+  port: 8090
+  servlet:
+    context-path:
+
+spring:
+  application:
+    name: test-login-react
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_login
+    username: root
+    password: root
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true

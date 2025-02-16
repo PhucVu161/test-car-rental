@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách Account</title>
+</head>
+<body>
+<h1>Danh sách Tài Khoản</h1>
+<ul id="accountList"></ul>
+
+<script>
+    fetch('/accounts')
+        .then(response => response.json())
+        .then(accounts => {
+            let list = document.getElementById('accountList');
+            accounts.forEach(account => {
+                let li = document.createElement('li');
+                li.textContent = account.username;
+                list.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Lỗi:', error));
+</script>
+</body>
+</html>

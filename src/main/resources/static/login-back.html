@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+</head>
+<body>
+<h2>Đăng nhập</h2>
+<form id="loginForm">
+    <label for="username">Tên đăng nhập:</label>
+    <input type="text" id="username" required>
+    <br>
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" required>
+    <br>
+    <button type="submit">Đăng nhập</button>
+</form>
+<p id="message"></p>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Ngăn chặn reload trang
+
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ username: username, password: password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                document.getElementById("message").textContent = "Đăng nhập thành công!";
+            } else {
+                document.getElementById("message").textContent = "Sai tài khoản hoặc mật khẩu!";
+            }
+        })
+        .catch(error => console.error("Lỗi:", error));
+    });
+</script>
+</body>
+</html>
