@@ -27,7 +27,13 @@
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
+            if (data.success && data.role === "admin"){
+                document.getElementById("message").textContent = "Đăng nhập thành công!";
+                sessionStorage.setItem("username", username);
+                sessionStorage.setItem("role", data.role);
+                window.location.href = "homeadmin.html";
+            }
+            else if (data.success) {
                 document.getElementById("message").textContent = "Đăng nhập thành công!";
                 sessionStorage.setItem("username", username);
                 sessionStorage.setItem("role", data.role);
