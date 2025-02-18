@@ -1,19 +1,36 @@
-function showLogin() {
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("login").style.display = "block";
-    document.getElementById("nav_sign").style.display = "none";
-    document.getElementById("nav_log").style.display = "none";
-    document.getElementById("nav_user").style.display = "block";
-}
 
+function loginUser() {
+    event.preventDefault();
 
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-function showLogout() {
-    document.getElementById("intro").style.display = "block";
-    document.getElementById("login").style.display = "none";
-    document.getElementById("nav_sign").style.display = "block";
-    document.getElementById("nav_log").style.display = "block";
-    document.getElementById("nav_user").style.display = "none";
+    fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.role === "car owner"){
+            document.getElementById("message").textContent = "Đăng nhập thành công!";
+            location.reload();
+            //window.location.href = "homecarowner.html";
+            console.log("thành công");
+            document.getElementById("loginForm").reset();
+        }
+        else if (data.success) {
+            document.getElementById("message").textContent = "Đăng nhập thành công!";
+            location.reload();
+            //window.location.href = "home.html";
+            console.log("thành công");
+            document.getElementById("loginForm").reset();
+        } else {
+            document.getElementById("message").textContent = "Sai tài khoản hoặc mật khẩu!";
+            console.log("thất bại");
+        }
+    })
+    .catch(error => console.error("Lỗi:", error));
 }
 
 function toggleMenu(event) {

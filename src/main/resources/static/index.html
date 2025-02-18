@@ -31,6 +31,7 @@
                 });
         }
 
+
         function reinitBootstrap() {
             var modals = document.querySelectorAll(".modal");
             modals.forEach(modal => {
@@ -38,9 +39,47 @@
             });
         }
 
+        function checkLogin() {
+            console.log("checkLogin đã được gọi");
+            fetch("/me", { credentials: "same-origin" })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Session data:", data);
+                if (data.success) {
+                    document.getElementById("intro").style.display = "none";
+                    document.getElementById("login").style.display = "block";
+                    document.getElementById("nav_sign").style.display = "none";
+                    document.getElementById("nav_log").style.display = "none";
+                    document.getElementById("nav_user").style.display = "block";
+                    if(data.data.role == "customer"){
+                        document.getElementById("userInfo").textContent = "Chào customer, " + data.data.email;
+                    }else{
+                        document.getElementById("userInfo").textContent = "Chào car owner, " + data.data.email;
+                    }
+                } else {
+                    document.getElementById("intro").style.display = "block";
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("nav_sign").style.display = "block";
+                    document.getElementById("nav_log").style.display = "block";
+                    document.getElementById("nav_user").style.display = "none";
+                }
+            })
+            .catch(error => console.error("Lỗi kiểm tra session:", error));
+        }
+        function logoutUser() {
+            fetch("/logout", { credentials: "same-origin" })
+            .then(() => {
+                location.reload();
+                //window.location.href = "home.html";
+            });
+        }
+
         loadComponent("homepage_nav", "components/layout/navbar.html");
         loadComponent("homepage", "components/page/homepage.html");
         loadComponent("homepage_footer", "components/layout/footer.html");
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLogin();
+        });
     </script> 
 </body>
 
