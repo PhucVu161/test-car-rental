@@ -27,16 +27,12 @@
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success && data.role === "car owner"){
+            if (data.success && data.data.role === "car owner"){
                 document.getElementById("message").textContent = "Đăng nhập thành công!";
-                sessionStorage.setItem("email", email);
-                sessionStorage.setItem("role", data.role);
                 window.location.href = "homecarowner.html";
             }
             else if (data.success) {
                 document.getElementById("message").textContent = "Đăng nhập thành công!";
-                sessionStorage.setItem("email", email);
-                sessionStorage.setItem("role", data.role);
                 window.location.href = "home.html";
             } else {
                 document.getElementById("message").textContent = "Sai tài khoản hoặc mật khẩu!";

@@ -14,8 +14,8 @@
       fetch("/me")
       .then(response => response.json())
       .then(data => {
-          if (data.loggedIn) {
-              document.getElementById("userInfo").textContent = "Chào carowner, " + data.email + " (" + data.role + ")";
+          if (data.success) {
+              document.getElementById("userInfo").textContent = "Chào Car Owner, " + data.data.email + " (" + data.data.role + ")";
           } else {
               window.location.href = "login.html";
           }
@@ -25,7 +25,6 @@
   function logout() {
       fetch("/logout")
       .then(() => {
-          sessionStorage.clear();
           window.location.href = "login.html";
       });
   }

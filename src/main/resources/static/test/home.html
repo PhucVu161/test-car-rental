@@ -5,7 +5,7 @@
     <title>Trang chủ</title>
 </head>
 <body>
-<h1>Trang Chủ</h1>
+<h1>Trang chủ khách hàng</h1>
 <div id="authSection">
     <button id="loginBtn" onclick="window.location.href='login.html'">Đăng nhập</button>
     <button id="registerBtn" onclick="window.location.href='register.html'">Đăng ký</button>
@@ -21,8 +21,8 @@
         .then(response => response.json())
         .then(data => {
             console.log("Session data:", data);
-            if (data.loggedIn) {
-                document.getElementById("userInfo").textContent = "Chào customer, " + data.email;
+            if (data.success) {
+                document.getElementById("userInfo").textContent = "Chào customer, " + data.data.email;
                 document.getElementById("authSection").style.display = "none";
                 document.getElementById("userSection").style.display = "block";
             } else {
