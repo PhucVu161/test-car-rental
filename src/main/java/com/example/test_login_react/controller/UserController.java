@@ -1,35 +1,34 @@
 package com.example.test_login_react.controller;
 
-import com.example.test_login_react.entity.Account;
+import com.example.test_login_react.entity.User;
+import com.example.test_login_react.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.test_login_react.service.AccountService;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 @RestController
 @RequestMapping()
-public class AccountController {
+public class UserController {
     @Autowired
-    private AccountService accountService;
+    private UserService userService;
 
-    @GetMapping("/accounts")
-    List<Account> getAccounts(){
-        return accountService.getAccounts();
+    @GetMapping("/user")
+    public List<User> getUser(){
+        return userService.getUser();
     }
 
     @PostMapping("/login")
     public Map<String, Object> login(@RequestBody Map<String, String> loginRequest, HttpSession session) {
-        String username = loginRequest.get("username");
+        String email = loginRequest.get("email");
         String password = loginRequest.get("password");
 
-        List<Account> accounts = accountService.getAccounts();
-        Optional<Account> user = accounts.stream()
-                .filter(acc -> acc.getUsername().equals(username) && acc.getPassword().equals(password))
+        List<User> accounts = userService.getUser();
+        Optional<User> user = accounts.stream()
+                .filter(acc -> acc.getEmail().equals(email) && acc.getPassword().equals(password))
                 .findFirst();
 
         if (user.isPresent()) {
@@ -48,10 +47,10 @@ public class AccountController {
 
     @GetMapping("/me")
     public Map<String, Object> getUserSession(HttpSession session) {
-        Account user = (Account) session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         if (user == null) {
             return Map.of("loggedIn", false);
         }
-        return Map.of("loggedIn", true, "username", user.getUsername(), "role", user.getRole());
+        return Map.of("loggedIn", true, "email", user.getEmail(), "role", user.getRole());
     }
 }

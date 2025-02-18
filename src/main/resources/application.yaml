@@ -7,7 +7,7 @@ spring:
   application:
     name: test-login-react
   datasource:
-    url: jdbc:mysql://localhost:3306/test_login
+    url: jdbc:mysql://localhost:3306/car_rental
     username: root
     password: root
   jpa:

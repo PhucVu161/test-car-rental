@@ -5,7 +5,7 @@
   <title>Trang chủ</title>
 </head>
 <body>
-<h2>Trang chủ của Admin</h2>
+<h2>Trang chủ của Car Owner</h2>
 <p id="userInfo"></p>
 <button onclick="logout()">Đăng xuất</button>
 
@@ -15,7 +15,7 @@
       .then(response => response.json())
       .then(data => {
           if (data.loggedIn) {
-              document.getElementById("userInfo").textContent = "Chào admin, " + data.username + " (" + data.role + ")";
+              document.getElementById("userInfo").textContent = "Chào carowner, " + data.email + " (" + data.role + ")";
           } else {
               window.location.href = "login.html";
           }

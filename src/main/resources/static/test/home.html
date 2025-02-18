@@ -22,7 +22,7 @@
         .then(data => {
             console.log("Session data:", data);
             if (data.loggedIn) {
-                document.getElementById("userInfo").textContent = "Chào, " + data.username;
+                document.getElementById("userInfo").textContent = "Chào customer, " + data.email;
                 document.getElementById("authSection").style.display = "none";
                 document.getElementById("userSection").style.display = "block";
             } else {
