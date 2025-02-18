@@ -3,7 +3,16 @@
 #nav_sign {display: block;}
 #nav_log {display: block; }
 #nav_user {display: none; }
+#nav_profile{display: none;}
+#login_owner{display: none;}
+#pro_addcar{display: none;}
+#pro_cardetail{display: none;}
+#pro_thumview{display: none;}
+#resetPassword{display: none;}
+#car_search{display: none;}
+#car_bookcar{display: none;}
 
+/*Css home page */
 .location-card {
     width: 100%; /* Full width theo cột */
     height: 180px; /* Vuông nhỏ */
@@ -37,3 +46,71 @@
     font-size: 14px;
     margin: 0;
 }
+
+
+.step-indicator .step {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.step-indicator .step.active {
+    background-color: #0d6efd;
+    color: white;
+}
+.step-indicator .step.inactive {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+.file-upload-card {
+    border: 2px dashed #ddd;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.file-upload-card:hover {
+    border-color: #0d6efd;
+}
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.checkbox-group .form-check {
+    flex: 1 1 30%;
+}
+.step-content {
+    display: none;
+}
+.step-content.active {
+    display: block;
+}   
+
+
+.card-img-top {
+    background-image: url('/assets/pictures/pic1.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+}
+
+.tab-content {
+    padding: 20px 0;
+}
+.nav-pills .nav-link.active {
+    background-color: white;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+}
+.nav-pills .nav-link {
+    background-color: #0d6efd;
+    color: white;
+    margin-right: 10px;
+}
+.document-table {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+
+/*css passworld*/

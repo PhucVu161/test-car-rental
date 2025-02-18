@@ -43,9 +43,13 @@
                         <i class="fa-solid fa-bars"></i>
                     </a>
                     <ul id="userMenu" class="dropdown-menu" style="display: none;">
-                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="showProfile()">My Profile</a></li>
                         <li><a class="dropdown-item" href="#">My Bookings</a></li>
                         <li><a class="dropdown-item" href="#">My Wallets</a></li>
+                        
+                        <li><a class="dropdown-item" href="#" onclick="mycar()">My Cars</a></li>
+                        <li><a class="dropdown-item" href="#">My Reports</a></li>
+
                         <li><a class="dropdown-item text-danger" href="#" onclick="showLogout()">Logout</a></li>
                     </ul>
                 </li>
@@ -126,7 +130,7 @@
                         <input type="password" class="form-control" placeholder="Password" required>
                     </div>
                     <div class="mb-3 text-end">
-                        <a href="#" class="text-primary text-decoration-underline" style="font-style: italic; font-size: small;">Forgot the password?</a>
+                        <a href="#" class="text-primary text-decoration-underline" style="font-style: italic; font-size: small;" onclick="resetPass()">Forgot the password?</a>
                     </div>
                     <button type="submit" class="btn btn-primary w-100" onclick="showLogin()">LOGIN IN</button>
                 </form>
@@ -137,85 +141,4 @@
 </div>
 
 
-
-
-
-<!-------------------------------------------------------------------------------------- Modal ----------------------------------------------------------------------------------------------------->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Create an Account</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Your Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Your Email</label>
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Pick a password">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="Confirm password">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="termsCheck">
-                        <label class="form-check-label text-primary text-decoration-underline" for="termsCheck">I agree to the Terms and Conditions</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
-                </form>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">LOG IN USING YOUR ACCOUNT</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Your Email</label>
-                        <input type="email" class="form-control" placeholder="Your email address" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Password" required>
-                    </div>
-                    <div class="mb-3 text-end">
-                        <a href="#" class="text-primary text-decoration-underline" style="font-style: italic; font-size: small;">Forgot the password?</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100" onclick="showLogin()">LOGIN IN</button>
-                </form>
-            </div>
-            
-        </div>
-    </div>
-</div>
 
