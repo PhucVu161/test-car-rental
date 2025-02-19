@@ -11,6 +11,10 @@ function showLogin() {
 
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
+    document.getElementById("homepage_footer").style.display = "block";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 
  
 
@@ -35,6 +39,11 @@ function showLogout() {
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
 
+    document.getElementById("homepage_footer").style.display = "block";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
+
 
 
 }
@@ -55,7 +64,11 @@ function showProfile()
 
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
-
+    
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
     
 
 }
@@ -77,6 +90,11 @@ function showHomeProfile()
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
 
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
+
   
 }
 
@@ -90,6 +108,11 @@ function cusChoice()
 
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
+
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 
   
 
@@ -106,6 +129,11 @@ function ownerChoice()
 
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
+
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 
   
      
@@ -127,6 +155,11 @@ function addcar()
 
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
+
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 
     
 
@@ -151,7 +184,10 @@ function mycar()
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
 
-   
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 }
 
 function cardetail()
@@ -171,7 +207,10 @@ function cardetail()
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "none";
 
-
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 }
 
 function searchcar()
@@ -192,7 +231,10 @@ function searchcar()
     document.getElementById("car_bookcar").style.display = "none";
 
 
-
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 }
 
 function bookcar()
@@ -212,6 +254,10 @@ function bookcar()
 
     document.getElementById("car_search").style.display = "none";
     document.getElementById("car_bookcar").style.display = "block";
+    document.getElementById("homepage_footer").style.display = "none";
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
 }
 
 function toggleMenu(event) {
@@ -234,6 +280,12 @@ function resetPass()
     document.getElementById("pro_cardetail").style.display="none";
     document.getElementById("pro_thumview").style.display="none";
 
+    document.getElementById("homepage_footer").style.display = "none";
+
+    document.getElementById("pro_booking").style.display = "none";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
+
     
 }
 
@@ -241,6 +293,85 @@ function resetPass()
 function confirmPass() {
     document.getElementById("step1").style.display = "none";
     document.getElementById("step2").style.display = "block";
+}
+
+
+function mybooking()
+{
+    document.getElementById("homepage_part").style.display="none";
+    document.getElementById("intro").style.display = "none";
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("login_owner").style.display = "none";
+    document.getElementById("resetPassword").style.display="none";
+    
+    document.getElementById("nav_profile").style.display="none";
+    document.getElementById("pro_addcar").style.display="none";
+    document.getElementById("pro_cardetail").style.display="none";
+    document.getElementById("pro_thumview").style.display="none";
+
+
+    document.getElementById("car_search").style.display = "none";
+    document.getElementById("car_bookcar").style.display = "none";
+    document.getElementById("homepage_footer").style.display = "none";
+
+    document.getElementById("pro_booking").style.display = "block";
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "none";
+
+}
+
+
+function mywallet()
+{
+    document.getElementById("homepage_part").style.display="none";
+    document.getElementById("intro").style.display = "none";
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("login_owner").style.display = "none";
+    document.getElementById("resetPassword").style.display="none";
+    
+    document.getElementById("nav_profile").style.display="none";
+    document.getElementById("pro_addcar").style.display="none";
+    document.getElementById("pro_cardetail").style.display="none";
+    document.getElementById("pro_thumview").style.display="none";
+
+
+    document.getElementById("car_search").style.display = "none";
+    document.getElementById("car_bookcar").style.display = "none";
+    document.getElementById("homepage_footer").style.display = "none";
+
+    document.getElementById("pro_booking").style.display = "none";
+
+    document.getElementById("pro_wallet").style.display = "block";
+    document.getElementById("pro_report").style.display = "none";
+
+}
+
+function myreport()
+{
+    document.getElementById("homepage_part").style.display="none";
+    document.getElementById("intro").style.display = "none";
+
+    document.getElementById("login").style.display = "none";
+    document.getElementById("login_owner").style.display = "none";
+    document.getElementById("resetPassword").style.display="none";
+    
+    document.getElementById("nav_profile").style.display="none";
+    document.getElementById("pro_addcar").style.display="none";
+    document.getElementById("pro_cardetail").style.display="none";
+    document.getElementById("pro_thumview").style.display="none";
+
+
+    document.getElementById("car_search").style.display = "none";
+    document.getElementById("car_bookcar").style.display = "none";
+    document.getElementById("homepage_footer").style.display = "none";
+
+    document.getElementById("pro_booking").style.display = "none";
+
+    document.getElementById("pro_wallet").style.display = "none";
+    document.getElementById("pro_report").style.display = "block";
+
 }
 
 

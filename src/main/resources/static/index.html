@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div id="homepage_nav"></div>
+    <div id="homepage_nav" ></div>
     <div id="homepage"></div>
     <div id="nav_profile"></div>
     <div id="pro_addcar"></div>
@@ -27,12 +27,21 @@
     <div id="pro_thumview"></div>
     <div id="pro_resetpass"></div>
     <div id="car_search"></div>
-    <div id="car_bookcar"></div>
+    <div id="car_bookcar" ></div>
+    <div id="homepage_footer"></div>
+    <div id="pro_booking"></div>
+
+    <div id="pro_wallet"></div>
+    <div id="pro_report"></div>
+    
+  
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   
 
 
     <script>
+    
         function loadComponent(id, file) {
             fetch(file)
                 .then(response => response.text())
@@ -48,22 +57,27 @@
                 new bootstrap.Modal(modal);
             });
         }
+
         loadComponent("car_bookcar", "components/page/bookCar.html");
         loadComponent("homepage_nav", "components/layout/navbar.html");
         loadComponent("homepage", "components/page/homepage.html");
         loadComponent("homepage_footer", "components/layout/footer.html");
         loadComponent("nav_profile", "components/page/myprofile.html");
+        loadComponent("homepage_footer", "components/layout/footer.html");
        
         loadComponent("pro_addcar", "components/page/addcar.html");
         loadComponent("pro_cardetail", "components/page/viewDetail.html");
         loadComponent("pro_thumview", "components/page/carThumerView.html");
         loadComponent("car_search", "components/page/searchResults.html");
         loadComponent("pro_resetpass", "components/page/resetPassword.html");
+        loadComponent("pro_booking", "components/page/mybooking.html");
+
+        loadComponent("pro_wallet", "components/page/mywallet.html");
+        loadComponent("pro_report", "components/page/myreport.html");
+
+
     </script> 
 
-    
-
- 
 </body>
 
 </html>
